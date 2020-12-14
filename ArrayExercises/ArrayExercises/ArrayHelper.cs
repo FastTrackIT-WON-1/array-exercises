@@ -66,5 +66,38 @@ namespace ArrayExercises
 
             return result;
         }
+
+        public static int[] SelectionSort(int[] array, SortDirection sort)
+        {
+            int[] result = Clone(array);
+
+            for (int i = 0; i < result.Length - 1; i++)
+            {
+                for (int j = i + 1; j < result.Length; j++)
+                {
+                    bool isSwapNeeded;
+                    switch (sort)
+                    {
+                        case SortDirection.Descending:
+                            isSwapNeeded = result[i] < result[j];
+                            break;
+
+                        case SortDirection.Ascending:
+                        default:
+                            isSwapNeeded = result[i] > result[j];
+                            break;
+                    }
+
+                    if (isSwapNeeded)
+                    {
+                        int temp = result[i];
+                        result[i] = result[j];
+                        result[j] = temp;
+                    }
+                }
+            }
+
+            return result;
+        }
     }
 }

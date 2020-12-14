@@ -10,27 +10,22 @@ namespace ArrayExercises
 
             /*
             index = 0,
-            elem curent: 7, elem urmator: 13 
-            7 < 13? Da =>
+            (1 => array.Length) swap index 0 with 3: 1, 13, 22, 7, 5
 
             index = 1,
-            elem curent: 13, elem urmator: 22 
-            13 < 22? Da =>
+            (2 => array.Length) swap index 1 with 4: 1, 5, 22, 7, 13
 
             index = 2,
-            elem curent: 22, elem urmator: 1
-            22 < 1? Nu => interschimbare: 7, 13, 1, 22, 5
+            (3 => array.Length) swap index 2 with 3: 1, 5, 7, 22, 13
 
-            index = 0,
-            elem curent: 7, elem urmator: 13 
-            7 < 13? Da =>
+            index = 3,
+            (4 => array.Length) swap index  with : 1, 5, 7, 13, 22
+
+            index 4 
             */
 
-            int[] sortedArrayAsc = ArrayHelper.BubbleSort(array, SortDirection.Ascending);
-            int[] sortedArrayDesc = ArrayHelper.BubbleSort(array, SortDirection.Descending);
-
-            Console.WriteLine(ReferenceEquals(sortedArrayAsc, array));
-            Console.WriteLine(ReferenceEquals(sortedArrayDesc, array));
+            int[] sortedArrayAsc = ArrayHelper.SelectionSort(array, SortDirection.Ascending);
+            int[] sortedArrayDesc = ArrayHelper.SelectionSort(array, SortDirection.Descending);
 
 
             ArrayHelper.Print("Bubble Sort (asc)", sortedArrayAsc);
