@@ -13,32 +13,58 @@ namespace ArrayExercises
             Console.WriteLine($"{label}=[{elementsLists}]");
         }
 
-        public static int[] BubbleSortAsc(int[] array)
+        public static int[] Clone(int[] array)
         {
             if (array is null || array.Length == 0)
             {
                 return new int[0];
             }
 
+            int[] result = new int[array.Length];
+            for (int index = 0; index < result.Length; index++)
+            {
+                result[index] = array[index];
+            }
+
+            return result;
+        }
+
+        public static int[] BubbleSort(int[] array, SortDirection sort)
+        {
+            int[] result = Clone(array);
+
             bool hasSwap = true;
             while (hasSwap)
             {
                 hasSwap = false;
-                for (int index = 0; index < array.Length - 1; index++)
+                for (int index = 0; index < result.Length - 1; index++)
                 {
-                    if (array[index] > array[index + 1])
+                    bool isSwapNeeded;
+                    switch (sort)
+                    {
+                        case SortDirection.Descending:
+                            isSwapNeeded = result[index] < result[index + 1];
+                            break;
+
+                        case SortDirection.Ascending:
+                        default:
+                            isSwapNeeded = result[index] > result[index + 1];
+                            break;
+                    }
+
+                    if (isSwapNeeded)
                     {
                         // We need to swap!
-                        int tmp = array[index];
-                        array[index] = array[index + 1];
-                        array[index + 1] = tmp;
+                        int tmp = result[index];
+                        result[index] = result[index + 1];
+                        result[index + 1] = tmp;
                         hasSwap = true;
                         break;
                     }
                 }
             }
 
-            return array;
+            return result;
         }
     }
 }

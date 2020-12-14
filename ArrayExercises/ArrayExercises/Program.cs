@@ -26,8 +26,15 @@ namespace ArrayExercises
             7 < 13? Da =>
             */
 
-            int[] sortedArray = ArrayHelper.BubbleSortAsc(array);
-            ArrayHelper.Print("Bubble Sort", sortedArray);
+            int[] sortedArrayAsc = ArrayHelper.BubbleSort(array, SortDirection.Ascending);
+            int[] sortedArrayDesc = ArrayHelper.BubbleSort(array, SortDirection.Descending);
+
+            Console.WriteLine(ReferenceEquals(sortedArrayAsc, array));
+            Console.WriteLine(ReferenceEquals(sortedArrayDesc, array));
+
+
+            ArrayHelper.Print("Bubble Sort (asc)", sortedArrayAsc);
+            ArrayHelper.Print("Bubble Sort (desc)", sortedArrayDesc);
         }
     }
 }
