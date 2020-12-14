@@ -100,6 +100,11 @@ namespace ArrayExercises
 
         public static int[] Fibonacci(int n)
         {
+            if (n < 0)
+            {
+                return new int[0];
+            }
+
             if (n == 0)
             {
                 return new int[] { 0 };
@@ -120,6 +125,46 @@ namespace ArrayExercises
             }
 
             return fibo;
+        }
+
+        public static int[] EratostenePrimes(int n)
+        {
+            if (n <= 1)
+            {
+                return new int[0];
+            }
+
+            bool[] primes = new bool[n + 1];
+            for (int i = 0; i < primes.Length; i++)
+            {
+                primes[i] = true;
+            }
+
+            int countPrimes = 0;
+            for (int i = 2; i <= n; i++)
+            {
+                if (primes[i])
+                {
+                    countPrimes++;
+
+                    for (int factor = 2; i * factor <= n; factor++)
+                    {
+                        primes[i * factor] = false;
+                    }
+                }
+            }
+
+            int[] result = new int[countPrimes];
+            for (int i = 2, j = 0; i <= n; i++)
+            {
+                if (primes[i])
+                {
+                    result[j] = i;
+                    j++;
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -27,10 +27,12 @@ namespace ArrayExercises
             // int[] sortedArrayAsc = ArrayHelper.SelectionSort(array, SortDirection.Ascending);
             // int[] sortedArrayDesc = ArrayHelper.SelectionSort(array, SortDirection.Descending);
             int[] fibo = ArrayHelper.Fibonacci(12);
-
-
             ArrayHelper.Print("Fibonacci", fibo);
+
             // ArrayHelper.Print("Bubble Sort (desc)", sortedArrayDesc);
+
+            int[] primes = ArrayHelper.EratostenePrimes(120);
+            ArrayHelper.Print("Prime numbers", primes);
         }
     }
 }
