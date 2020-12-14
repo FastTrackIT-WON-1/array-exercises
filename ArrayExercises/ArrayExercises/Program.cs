@@ -6,8 +6,14 @@ namespace ArrayExercises
     {
         static void Main(string[] args)
         {
-            int[,] matrix = MatrixHelper.ReadMatrix();
-            MatrixHelper.Print("Matrix:", matrix);
+            int[,] matrix1 = MatrixHelper.ReadMatrix();
+            MatrixHelper.Print("Matrix1:", matrix1);
+
+            int[,] matrix2 = MatrixHelper.ReadMatrix();
+            MatrixHelper.Print("Matrix2:", matrix2);
+
+            int[,] prod = MatrixHelper.Product(matrix1, matrix2);
+            MatrixHelper.Print("Product Matrix:", prod);
         }
     }
 }
