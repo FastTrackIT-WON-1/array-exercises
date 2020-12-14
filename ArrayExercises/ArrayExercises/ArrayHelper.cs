@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ArrayExercises
 {
@@ -98,6 +96,30 @@ namespace ArrayExercises
             }
 
             return result;
+        }
+
+        public static int[] Fibonacci(int n)
+        {
+            if (n == 0)
+            {
+                return new int[] { 0 };
+            }
+
+            if (n == 1)
+            {
+                return new int[] { 0, 1 };
+            }
+
+            int[] fibo = new int[n + 1];
+            fibo[0] = 0;
+            fibo[1] = 1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                fibo[i] = fibo[i - 1] + fibo[i - 2];
+            }
+
+            return fibo;
         }
     }
 }

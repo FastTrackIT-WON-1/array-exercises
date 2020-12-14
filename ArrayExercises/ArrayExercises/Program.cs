@@ -24,12 +24,13 @@ namespace ArrayExercises
             index 4 
             */
 
-            int[] sortedArrayAsc = ArrayHelper.SelectionSort(array, SortDirection.Ascending);
-            int[] sortedArrayDesc = ArrayHelper.SelectionSort(array, SortDirection.Descending);
+            // int[] sortedArrayAsc = ArrayHelper.SelectionSort(array, SortDirection.Ascending);
+            // int[] sortedArrayDesc = ArrayHelper.SelectionSort(array, SortDirection.Descending);
+            int[] fibo = ArrayHelper.Fibonacci(12);
 
 
-            ArrayHelper.Print("Bubble Sort (asc)", sortedArrayAsc);
-            ArrayHelper.Print("Bubble Sort (desc)", sortedArrayDesc);
+            ArrayHelper.Print("Fibonacci", fibo);
+            // ArrayHelper.Print("Bubble Sort (desc)", sortedArrayDesc);
         }
     }
 }
